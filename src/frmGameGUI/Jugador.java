@@ -1,12 +1,14 @@
 package frmGameGUI;
 
 public class Jugador {
+    // Jugador Attributes
     private int id;
     private String jugador;
     private int nivel;
     private String juegoFavorito;
     private int score;
 
+    // Constructor
     public Jugador(int id, String jugador, int nivel, String juegoFavorito, int score) {
         this.id = id;
         this.nivel = nivel;
@@ -15,7 +17,7 @@ public class Jugador {
         this.score = score;
     }
 
-    // Encapsulation Getter
+    // Encapsulation Getter (read values)
     public int getId() {
         return id;
     }
@@ -32,7 +34,7 @@ public class Jugador {
         return score;
     }
 
-    // Encapsulation Setter
+    // Encapsulation Setter (change values)
     public void setScore(int score) {
         this.score = score;
     }
@@ -45,5 +47,4 @@ public class Jugador {
     public void setJuegoFavorito(String juegoFavorito) {
         this.juegoFavorito = juegoFavorito;
     }
-
 }

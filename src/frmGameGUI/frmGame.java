@@ -18,7 +18,7 @@ import java.io.IOException;
  */
 public class frmGame extends javax.swing.JFrame {
 
-    private JugadorManager manager = new JugadorManager();
+    private JugadorManager manager = new JugadorManager(); // Controller Object to add, delete, edit, save
 
     /**
      * Creates new form frmGame
@@ -254,6 +254,7 @@ public class frmGame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                        
 
+    // Save Button
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
         try {
@@ -286,6 +287,7 @@ public class frmGame extends javax.swing.JFrame {
         }
     }
 
+    // Clear Text Area
     private void clearForm() {
         txtID.setText("");
         txtJugador.setText("");
@@ -294,6 +296,7 @@ public class frmGame extends javax.swing.JFrame {
         txtScore.setText("");
     }
 
+    // Take Screenshots
     public void takeScreenshot() {
         try {
             Point location = this.getLocationOnScreen(); // Get top-left of the window
@@ -309,14 +312,7 @@ public class frmGame extends javax.swing.JFrame {
         }
     }
 
-    public void saveJugadorToFile(Jugador jugador) {
-        try (FileWriter writer = new FileWriter("jugador.txt", true)) {
-            writer.write(jugador.toString() + "\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
+    // Logic used to show players by id in the textarea
     private void btnIDActionPerformed(java.awt.event.ActionEvent evt) {
         String idText = txtID.getText().trim();
 
@@ -359,6 +355,7 @@ public class frmGame extends javax.swing.JFrame {
         }
     }
 
+    // Delete Button
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             String idText = txtID.getText().trim();
@@ -395,6 +392,7 @@ public class frmGame extends javax.swing.JFrame {
         }
     }
 
+    // Edit Button
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             int id = Integer.parseInt(txtID.getText().trim());
